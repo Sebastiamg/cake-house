@@ -1,0 +1,377 @@
+{% extends 'cake/plantilla.html' %}
+{% load static %}
+
+{% block css %}
+    {% static 'styleMenu.css/' %}
+{% endblock css %} 
+
+
+{% block contenido %}
+<main>
+    <nav class="navegador_principal">
+        <a href="/index.html" class="botonInicio">Inicio</a>
+        <a href="#" class="botonTienda">Tienda</a>
+        <a href="/informacion.html" class="botonInformacion">Informacion</a>
+        <a href="#" class="botonPedidos">Pedidos</a>
+    </nav>
+    <nav class="navegador_tienda">
+        <a href="#todo">Todo</a>
+        <a href="#tradicionales">Tradicionales</a>
+        <a href="#cheseCake">Cheese Cake</a>
+        <a href="#cupCakes">Cup Cakes</a>
+        <a href="#especiales">Especiales</a>
+        <!-- <a href="#">Diseña Tu Pastel</a> -->
+    </nav>
+    <!-- <div class="buscador">
+        <div class="box">
+            <form action="">
+                <input type="text" placeholder="Producto especifico">
+                <input type="submit" value="Buscar">
+            </form>
+        </div>
+    </div> -->
+   
+    <div class="contenedor_general">
+        <div class="container" id="todo">
+
+            <h3 class="title"> Todos nuestro productos </h3>
+         
+            <div class="products-container">
+         
+               <div class="product" data-name="p-1">
+                  <img src="./img/images/1.png" alt="">
+                  <h3>Pastel de Fresas</h3>
+                  <div class="price">$12.00</div>
+
+              </div>
+         
+               <div class="product" data-name="p-2">
+                  <img src="./img/images/2.png" alt="">
+                  <h3>Pastel de Chocolate</h3>
+                  <div class="price">$13.00</div>
+                  
+               </div>
+         
+               <div class="product" data-name="p-3">
+                  <img src="./img/images/3.png" alt="">
+                  <h3>Pastel de vainilla</h3>
+                  <div class="price">$10.00</div>
+                  
+               </div>
+         
+               <div class="product" data-name="p-4">
+                  <img src="./img/images/4.png" alt="">
+                  <h3>Chese cake de moras</h3>
+                  <div class="price">$9.00</div>
+                  
+               </div>
+         
+               <div class="product" data-name="p-5">
+                  <img src="./img/images/5.png" alt="">
+                  <h3>Chese cake de Fresas</h3>
+                  <div class="price">$9.00</div>
+                  
+               </div>
+         
+               <div class="product" data-name="p-6">
+                  <img src="./img/images/6.png" alt="">
+                  <h3>Chese cake de Chocolate </h3>
+                  <div class="price">$9.00</div>
+                  
+               </div>
+
+               <div class="product" data-name="p-7">
+                 <img src="./img/images/7.png" alt="">
+                 <h3>Cup cake de chispas </h3>
+                 <div class="price">$5.00</div>
+                 
+              </div>
+
+              <div class="product" data-name="p-8">
+                 <img src="./img/images/8.png" alt="">
+                 <h3>Cup cake relleno de manjar</h3>
+                 <div class="price">$5.00</div>
+                 
+              </div>
+
+              <div class="product" data-name="p-9">
+                 <img src="./img/images/9.png" alt="">
+                 <h3>Cup Cake relleno de Chocolate </h3>
+                 <div class="price">$5.00</div>
+                 
+              </div>
+
+              <div class="product" data-name="p-10">
+                 <img src="./img/images/10.png" alt="">
+                 <h3>Pastel dia de la madre </h3>
+                 <div class="price">$20.00</div>
+                 
+              </div>
+              <div class="product" data-name="p-11">
+                 <img src="./img/images/11.png" alt="">
+                 <h3>Pastel dia del padre </h3>
+                 <div class="price">$20.00</div>
+                 
+              </div>
+              <div class="product" data-name="p-12">
+                 <img src="./img/images/12.png" alt="">
+                 <h3>Pastel navideño </h3>
+                 <div class="price">$20.00</div>
+                 
+              </div>
+         
+            </div>
+        </div>
+
+         <div class="container" id="tradicionales">
+
+            <h3 class="title"> Tradicionales </h3>
+         
+            <div class="products-container">
+         
+              <div class="product" data-name="p-1">
+                 <img src="./img/images/1.png" alt="">
+                 <h3>Pastel de Fresas</h3>
+                 <div class="price">$12.00</div>
+
+             </div>
+        
+              <div class="product" data-name="p-2">
+                 <img src="./img/images/2.png" alt="">
+                 <h3>Pastel de Chocolate</h3>
+                 <div class="price">$13.00</div>
+                 
+              </div>
+        
+              <div class="product" data-name="p-3">
+                 <img src="./img/images/3.png" alt="">
+                 <h3>Pastel de vainilla</h3>
+                 <div class="price">$10.00</div>
+                 
+              </div>
+                                        
+            </div>
+        </div>
+
+        <div class="container" id="cheseCake">
+
+            <h3 class="title"> Cheese cake </h3>
+         
+            <div class="products-container">
+         
+              <div class="product" data-name="p-4">
+                 <img src="./img/images/4.png" alt="">
+                 <h3>Chese cake de moras</h3>
+                 <div class="price">$9.00</div>
+                 
+              </div>
+        
+              <div class="product" data-name="p-5">
+                 <img src="./img/images/5.png" alt="">
+                 <h3>Chese cake de Fresas</h3>
+                 <div class="price">$9.00</div>
+                 
+              </div>
+        
+              <div class="product" data-name="p-6">
+                 <img src="./img/images/6.png" alt="">
+                 <h3>Chese cake de Chocolate </h3>
+                 <div class="price">$9.00</div>
+                 
+              </div>
+                                        
+            </div>
+        </div>
+
+        <div class="container" id="cupCakes">
+
+            <h3 class="title"> Cup Cake </h3>
+         
+            <div class="products-container">
+         
+              <div class="product" data-name="p-7">
+                 <img src="./img/images/7.png" alt="">
+                 <h3>Cup cake de chispas </h3>
+                 <div class="price">$5.00</div>
+                 
+              </div>
+
+              <div class="product" data-name="p-8">
+                 <img src="./img/images/8.png" alt="">
+                 <h3>Cup cake relleno de manjar</h3>
+                 <div class="price">$5.00</div>
+                 
+              </div>
+
+              <div class="product" data-name="p-9">
+                 <img src="./img/images/9.png" alt="">
+                 <h3>Cup Cake relleno de Chocolate </h3>
+                 <div class="price">$5.00</div>
+                 
+              </div>
+                                        
+            </div>
+        </div>
+
+        <div class="container" id="especiales">
+
+            <h3 class="title"> Especiales </h3>
+         
+            <div class="products-container">
+         
+              <div class="product" data-name="p-10">
+                 <img src="./img/images/10.png" alt="">
+                 <h3>Pastel dia de la madre </h3>
+                 <div class="price">$20.00</div>
+                 
+              </div>
+              <div class="product" data-name="p-11">
+                 <img src="./img/images/11.png" alt="">
+                 <h3>Pastel dia del padre </h3>
+                 <div class="price">$20.00</div>
+                 
+              </div>
+              <div class="product" data-name="p-12">
+                 <img src="./img/images/12.png" alt="">
+                 <h3>Pastel navideño </h3>
+                 <div class="price">$20.00</div>
+                 
+              </div>                
+            </div>
+        </div>
+
+
+         
+         <div class="products-preview">
+         
+            <div class="preview" data-target="p-1">
+               <i class="fas fa-times"></i>
+               <img src="./img/images/1.png" alt="" class="producto-imagen">
+               <h3 class="productoTitulo"> Pastel de Fresas</h3>
+               
+               <p>Pastel relleno de fresas con crema batida</p>
+               <div class="price">$12.00</div>
+               <i class="fa-solid fa-cart-arrow-down add-cartt"></i>
+               
+            </div>
+         
+            <div class="preview" data-target="p-2">
+               <i class="fas fa-times"></i>
+               <img src="./img/images/2.png" alt="" class="producto-imagen"> <!--agregar al resto la clase producto-imagen-->
+               <h3 class="productoTitulo"> Pastel de Chocolates</h3>
+               
+               <p>Delicioso pastel de chocolate con una capa superior de nutella</p>
+               <div class="price">$13.00</div>
+               <i class="fa-solid fa-cart-arrow-down add-cartt"></i>
+            </div>
+         
+            <div class="preview" data-target="p-3">
+               <i class="fas fa-times"></i>
+               <img src="./img/images/3.png" alt=""class="producto-imagen" >
+               <h3 class="productoTitulo"> Pastel de vainilla</h3>
+               
+               <p>Pastel echo esencia de vainilla.</p>
+               <div class="price">$10.00</div>
+               <i class="fa-solid fa-cart-arrow-down add-cartt"></i>
+            </div>
+         
+            <div class="preview" data-target="p-4">
+               <i class="fas fa-times"></i>
+               <img src="./img/images/4.png" alt="" class="producto-imagen">
+               <h3 class="productoTitulo">Chese cake de moras</h3>
+               
+               <p>Pastel de queso con centro de mermelada de moras.</p>
+               <div class="price">$9.00</div>
+               <i class="fa-solid fa-cart-arrow-down add-cartt"></i>
+            </div>
+         
+            <div class="preview" data-target="p-5">
+               <i class="fas fa-times"></i>
+               <img src="./img/images/5.png" alt="" class="producto-imagen">
+               <h3 class="productoTitulo">Chese cake de fresas</h3>
+               
+               <p>Delicioso pastel de queso cubierto por fresas.</p>
+               <div class="price">$9.00</div>
+               <i class="fa-solid fa-cart-arrow-down add-cartt"></i>
+            </div>
+         
+            <div class="preview" data-target="p-6">
+               <i class="fas fa-times"></i>
+               <img src="./img/images/6.png" alt="" class="producto-imagen">
+               <h3 class="productoTitulo"> Chese cake de chocolate </h3>
+               
+               <p>Delicioso pastel de queso mesclado con chocolate</p>
+               <div class="price">$9.00</div>
+               <i class="fa-solid fa-cart-arrow-down add-cartt"></i>
+            </div>
+
+            <div class="preview" data-target="p-7">
+              <i class="fas fa-times"></i>
+              <img src="./img/images/7.png" alt="" class="producto-imagen">
+              <h3 class="productoTitulo"> Cup cake de chispas </h3>
+              
+              <p>Pastelillo relleno de chispas de chocolate</p>
+              <div class="price">$5.00</div>
+              <i class="fa-solid fa-cart-arrow-down add-cartt"></i>
+           </div>
+
+           <div class="preview" data-target="p-8">
+              <i class="fas fa-times"></i>
+              <img src="./img/images/8.png" alt="" class="producto-imagen">
+              <h3 class="productoTitulo"> Cup cake relleno de manjar</h3>
+              
+              <p>Pastelillo relleno de manjar de leche</p>
+              <div class="price">$5.00</div>
+              <i class="fa-solid fa-cart-arrow-down add-cartt"></i>
+           </div>
+
+           <div class="preview" data-target="p-9">
+              <i class="fas fa-times"></i>
+              <img src="./img/images/9.png" alt="" class="producto-imagen">
+              <h3 class="productoTitulo"> Cup cake relleno de chocolate</h3>
+              
+              <p>Pastelillo relleno de chocolate nutella</p>
+              <div class="price">$5.00</div>
+              <i class="fa-solid fa-cart-arrow-down add-cartt"></i>
+           </div>
+
+           <div class="preview" data-target="p-10">
+              <i class="fas fa-times"></i>
+              <img src="./img/images/10.png" alt="" class="producto-imagen">
+              <h3 class="productoTitulo">Pastel dia del padre</h3>
+              
+              <p>Pastel echo con cafe y ron decorado adornado para el rey del hogar</p>
+              <div class="price">$20.00</div>
+              <i class="fa-solid fa-cart-arrow-down add-cartt"></i>
+           </div>
+
+           <div class="preview" data-target="p-11">
+              <i class="fas fa-times"></i>
+              <img src="./img/images/11.png" alt="" class="producto-imagen">
+              <h3 class="productoTitulo">Pastel dia de la madre</h3>
+              
+              <p>Pastel hecho con manjar y rompope adecuado para consentir a la reina del hogar</p>
+              <div class="price">$20.00</div>
+              <i class="fa-solid fa-cart-arrow-down add-cartt"></i>
+           </div>
+
+           <div class="preview" data-target="p-12">
+              <i class="fas fa-times"></i>
+              <img src="./img/images/12.png" alt="" class="producto-imagen">
+              <h3 class="productoTitulo">Pastel navideño</h3>
+              
+              <p>Pastel hecho con canella y chocolate perfecto para la epoca navideña</p>
+              <div class="price">$20.00</div>
+              <i class="fa-solid fa-cart-arrow-down add-cartt"></i>
+           </div>
+         
+         </div>
+
+    </div>   
+    
+</main>
+{% endblock contenido %}
+
+{% block script %}
+    {% static 'menuScript.js/' %}
+{% endblock script %}

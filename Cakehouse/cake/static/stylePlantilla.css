@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Pacifico&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fjalla One', sans-serif;
+    text-decoration: none;
+    transition: all .2s linear;
+}
+
+main{
+    min-height: calc(99.4vh - 88.56px - 121px);
+    
+}
+/**HEADER**/
+header{
+    background-color: #F59FBC;
+    padding-left: 10%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-right: 1%;
+}
+
+.contenedorHeader{
+    display: grid;
+    grid-template-columns: 15fr 1fr 1fr ;
+    align-items: center;
+    font-family: 'Fjalla One', sans-serif;
+    gap: 30px;
+}
+
+.logo{
+    font-family: 'Pacifico', cursive !important;
+    color: #583E3F;
+}
+
+
+.logIn a{
+    display: grid;
+    grid-template-columns: 1em 3em;
+    gap: 6px;
+    justify-content: center;
+
+    background-color: aliceblue;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 45px;
+
+    color: #583E3F;
+}
+
+.logIn a:hover{
+
+    background-color:#583E3F;
+    color:#fff;
+}
+
+.Carrito a{
+    display: grid;
+    grid-template-columns: 1em 3em;
+    gap: 1px;
+    justify-content: center;
+
+    text-decoration: none;
+    color: #fff;
+    font-size: 150%;
+
+}
+
+.Carrito a:hover{
+
+    color: #583E3F;
+}
+
+/** Tienda **/
+.carritoCompra{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 360px;
+    min-height: 100vh;
+    padding: 1rem;
+    background-color: rgb(255, 248, 236);
+    box-shadow: -2px 0 4px hsl(0 4% 15%/ 10%);
+    transition: 0.3s;
+    z-index: 2;
+}
+.carritoCompra.active{
+    right: 0;
+}
+.carrito-titulo{
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+.carrito-caja{
+    display: grid;
+    grid-template-columns: 32% 50% 18%;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+.carrito-caja img{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    padding: 10px;
+
+}
+.caja-detalle{
+    display: grid;
+    row-gap: 0.5rem;
+}
+.titulo-producto-carrito{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.carrito-precion{
+    font-weight: 500;
+}
+.carrito-contador{
+    border: 1px solid #583E3F;
+    outline-color: #F59FBC;
+    width: 2.4rem;
+    text-align: center;
+    font-size: 1rem;
+}
+.carrito-remover{
+    font-size: 24px;
+    color: #F59FBC;
+    cursor: pointer;
+}
+.total{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    border-top: 1px solid #583E3F;
+}
+.titulo-total{
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    
+}
+.precio-total{
+    margin-top: 1rem;
+    margin-left: 0.5rem;
+    font-size: 1rem;
+}
+.btn-comprar{
+    display: flex;
+    margin: 1.5rem auto 0 auto;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 1rem;
+    background-color: #F59FBC;
+    color: #583E3F;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+.btn-comprar:hover{
+    background-color: #583E3F;
+    color: #F59FBC;
+}
+#cerrar-carrito{
+    position: absolute;
+    top: 1rem;
+    right: 0.8rem;
+    font-size: 2rem;
+    color: #583E3F;
+    cursor: pointer;
+}
+
+/**FOOTER**/
+
+footer{
+    background-color:#FDC674;
+}
+
+.footerContenedor{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    align-items: center;
+    justify-items: center;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    gap: 10px;
+
+}
+
+.direccion ,.Horario, .Contactos{
+    display: grid;
+    grid-template-rows: auto;
+    justify-items: center;
+    text-align: center;
+}
+
+.iconos a {
+    text-decoration: none;
+    color: #583E3F;
+    font-size: 200%;
+    margin-top: 10px;
+}
+
+.iconos a:hover {
+    color: #fff;
+}
