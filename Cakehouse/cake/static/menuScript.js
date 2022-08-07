@@ -151,5 +151,4 @@ function updateTotal(){
     //Si el precio contiene centavos
     total=Math.round(total*100)/100
     document.getElementsByClassName('precio-total')[0].innerText ="$"+total
-  
 }

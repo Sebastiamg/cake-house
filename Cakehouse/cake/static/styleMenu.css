@@ -125,7 +125,9 @@
  }
  
  .container .products-container .product img{
-    height: 20rem;
+    /* height: 20rem; */
+   height: 40vmin;
+   width: 90%;
  }
  
  .container .products-container .product:hover img{
