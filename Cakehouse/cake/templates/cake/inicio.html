@@ -1,0 +1,53 @@
+{% extends 'cake/plantilla.html' %}
+{% load static %}
+
+{% block titulo %}
+    Inicio
+{% endblock titulo %}
+
+{% block css %}
+    {% static 'inicio.css/' %}
+{% endblock css %}
+
+{% block contenido %}
+<section>
+    <h2> Disfruta todos nuestro postres </h2>
+    <div class="slider-frame">
+        <!-- Slider  -->
+        <ul>
+            <li><img src="https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2021/07/decorar-un-pastel-y-hacerlo-ligero-y-saludable.jpg" alt=""></li>
+            <li><img src="https://www.cardamomo.news/__export/1651867267159/sites/debate/img/2022/05/06/pasteles_para_el_10_de_mayo.png_1902800913.png" alt=""></li>
+            <li><img src="https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2021/07/decorar-un-pastel-y-hacerlo-ligero-y-saludable.jpg" alt=""></li>
+            <li><img src="https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2021/07/decorar-un-pastel-y-hacerlo-ligero-y-saludable.jpg" alt=""></li>
+        </ul>
+    </div>
+  </section>
+        <!-- Productos destacados  -->
+<section class="contenedor">
+    <h2 class="subtitulo"> Mas vendidos:</h2>
+    <section class="productos">
+        <div class="destacados">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxlI5IX9u2BcCRmUErDmd9V9FRuBJwW-iVIzAf7rv5cTWUIjebBrdWmVhX1Kboz9QVxfs&usqp=CAU" alt="">
+        </div>
+        <div class="destacados">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxlI5IX9u2BcCRmUErDmd9V9FRuBJwW-iVIzAf7rv5cTWUIjebBrdWmVhX1Kboz9QVxfs&usqp=CAU"alt="">
+        </div>
+        <div class="destacados">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxlI5IX9u2BcCRmUErDmd9V9FRuBJwW-iVIzAf7rv5cTWUIjebBrdWmVhX1Kboz9QVxfs&usqp=CAU" alt="">
+        </div>
+    </section>
+{% comment %} Ver mas {% endcomment %}
+<section>
+    <form action=" {% url 'index' %} ">
+        <button>
+            Ver mas
+        </button>
+    </form>
+</section>
+
+</section>
+{% endblock contenido %}
+
+{% block script %}
+    {% static 'inicio.js/' %}
+{% endblock script %}

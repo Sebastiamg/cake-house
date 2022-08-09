@@ -1,6 +1,8 @@
 {% extends 'cake/plantilla.html' %}
 {% load static %}
 
+{% block titulo %}Menú Cake House{% endblock titulo %}
+
 {% block css %}
     {% static 'styleMenu.css/' %}
 {% endblock css %} 
@@ -8,12 +10,7 @@
 
 {% block contenido %}
 <main>
-    <nav class="navegador_principal">
-        <a href="/index.html" class="botonInicio">Inicio</a>
-        <a href="#" class="botonTienda">Tienda</a>
-        <a href="/informacion.html" class="botonInformacion">Informacion</a>
-        <a href="#" class="botonPedidos">Pedidos</a>
-    </nav>
+
     <nav class="navegador_tienda">
         <a href="#todo">Todo</a>
         <a href="#tradicionales">Tradicionales</a>
@@ -42,12 +39,14 @@
                   <div class="product" data-name="{{pastel.id}}">
                      <img src="{{pastel.imagen}}" alt="">
                      <h3>{{pastel.titulo}}</h3>
-                     <div class="price"> {{pastel.precio}}</div>
+                     <div class="price"> {{pastel.precio}}$</div>
                   </div>
                {% endfor %}
 
             {% else %}
-              <h1 style="tex-align: center">Sin productos disponibles</h1>
+            <div>
+              <h1 class="no_disponible">Sin productos disponibles</h1>
+            </div>
             {% endif %}
          
             </div>
@@ -61,7 +60,7 @@
                   <h3 class="productoTitulo">{{pastel.titulo}}</h3>
                   
                   <p>{{pastel.descripcion}}</p>
-                  <div class="price">{{pastel.precio}}</div>
+                  <div class="price">{{pastel.precio}}$</div>
                   <i class="fa-solid fa-cart-arrow-down add-cartt"></i>
                </div>
             {% endfor %}

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Pacifico&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fjalla+One&family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -71,6 +73,29 @@ header{
 .Carrito a:hover{
 
     color: #583E3F;
+}
+
+/** Navegador Tienda **/
+.navegador_tienda{
+    position:sticky;
+    top:0;
+    margin-top: 4%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #F59FBC ;
+    z-index: 1;
+}
+.navegador_tienda a{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-decoration: none;
+    /* font-family: 'Fjalla One', sans-serif; */
+    font-family: 'Source Sans Pro', sans-serif;
+    color: #583E3F;
+}
+
+.navegador_tienda a:hover{
+    font-size: larger;
 }
 
 /** Tienda **/
@@ -210,3 +235,4 @@ footer{
 .iconos a:hover {
     color: #fff;
 }
+

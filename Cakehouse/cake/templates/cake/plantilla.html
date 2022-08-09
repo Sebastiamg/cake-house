@@ -46,7 +46,14 @@
             </div>
         </div>
     </header>
-    
+{% comment %} navegador {% endcomment %}
+    <nav class="navegador_principal">
+        <a href="{% url 'inicio' %}" class="botonInicio">Inicio</a>
+        <a href="{% url 'index' %}" class="botonTienda">Tienda</a>
+        <a href="{% url 'info' %}" class="botonInformacion">Informacion</a>
+        <a href="" class="botonPedidos">Pedidos</a>
+    </nav>
+
     {% block contenido %}
     {% endblock contenido %}
 
@@ -63,11 +70,10 @@
             <div class="Contactos">
                 <h2>Contactanos</h2>
                 <div class="iconos">
-                    <a href="#" class="fa-brands fa-facebook-square"></a>
-                    <a href="#" class="fa-brands fa-instagram-square"></a>
-                    <a href="#" class="fa-brands fa-whatsapp-square"></a>
+                    <a href="https://www.facebook.com/" target="_blank" class="fa-brands fa-facebook-square"></a>
+                    <a href="https://www.instagram.com/cake_house05/" target="_blank" class="fa-brands fa-instagram-square"></a>
+                    <a href="https://wa.link/j2ged4" target="_blank" class="fa-brands fa-whatsapp-square"></a>
                 </div>
-                
             </div>
         </div>
     </footer>

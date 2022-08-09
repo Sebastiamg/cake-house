@@ -42,12 +42,12 @@
     padding-top: 20px;
     padding-bottom: 20px;
     text-decoration: none;
-    font-family: 'Fjalla One', sans-serif;
+    /* font-family: 'Fjalla One', sans-serif; */
     color: #583E3F;
 }
 
 .navegador_tienda a:hover{
-    color: #FDC674;
+    font-size: larger;
 }
 
 /**Buscador**/
@@ -275,3 +275,9 @@
     color:#fff;
  }
  
+.no_disponible {
+   position: absolute;
+   left: 35%;
+   right: 35%;
+   color: rgba(0, 0, 0, 0.349)
+}
