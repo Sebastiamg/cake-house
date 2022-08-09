@@ -38,3 +38,8 @@ def actualizar(request, producto_id):
     # return HttpResponse("hola")
     # return render(request, "cake/administrador.html", {"pList": producto_lista })
 
+def login(request):
+    return render(request, "cake/login.html")
+
+def registro(request):
+    return render(request, "cake/registro.html")

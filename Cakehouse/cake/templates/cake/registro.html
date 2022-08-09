@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrate</title>
+    <link rel="stylesheet" href="{% static 'login.css/' %}">
+    <script src="https://kit.fontawesome.com/8e5e9f9afd.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <form class="formulario">
+        <h1>Registrate</h1>
+        <div class="contenedor">
+            <div class="imput-contenedor">
+                <i class="fa-solid fa-user icon"></i>
+                <input type="text" placeholder="Nombre">
+            </div><br>
+            <div class="imput-contenedor">
+                <i class="fa-solid fa-envelope icon"></i>
+                <input type="text" placeholder="Correo Electronico">
+            </div><br>
+            <div class="imput-contenedor">
+                <i class="fa-solid fa-lock icon"></i>
+                <input type="password" placeholder="Contraseña">
+            </div><br>
+            <input type="submit" value="Registrate" class="button">
+            <p>Al registrarte, aceptas nuestras condiciones de Uso y la Política de privacidad</p>
+            <p>¿Ya tienes cuenta?<a class="link" href="/cake/login/"> Iniciar Sesión</a></p>
+        </div>
+    </form>  
+</body>
+</html>

@@ -1,0 +1,67 @@
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    background-image: url(https://i.pinimg.com/564x/3a/31/af/3a31af0cb0c3861315030ceec9eda854--cute-wallpaper-backgrounds-pastel-iphone-wallpaper.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    opacity: 0.7;
+}
+
+*{
+    box-sizing: border-box;
+}
+.formulario{
+    width: 300px;
+    border: 1px solid black;
+    height: 70%;
+    margin-top: 150px;
+    margin-left: 550px;
+    border-radius: 10px;
+    background: #8cfca4;
+}
+input[type="text"],
+input[type="password"]{
+    padding: 5px;
+    background: #cfffca;
+    border-radius: 10px;
+}
+.button{
+    width: 100px;
+    padding: 6px;
+    border-radius: 5px;
+    margin-left: 85px;
+    cursor: pointer;
+    background: #c999af;
+
+}
+
+.contenedor{
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+}
+h1{
+    text-align: center;
+    color: black;
+    font-size: 40px;
+}
+.icon{
+    min-width: 50px;
+    text-align: center;
+    color: rgb(8, 8, 8);
+}
+.button:hover{
+    background: cadetblue;
+}
+p{
+    text-align: center;
+    font-size: 12px;
+}
+.link{
+    text-decoration: none;
+    color: blue;
+    font-weight: 600;
+}
+.link:hover{
+    color: cadetblue;
+}
