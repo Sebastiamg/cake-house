@@ -41,12 +41,12 @@ function ready() {
     button.addEventListener('click',addCartClicked)
   }
   // Boton de comprar trabajando
-  document.getElementsByClassName('btn-comprar')[0]
+  const pedido = document.getElementsByClassName('btn-comprar')[0]
   .addEventListener('click',buyButtonClicked)
 }
 //Boton de comprar
 function buyButtonClicked(){
-  alert('Tu orden ha sido enviada')
+  window.location.href = "http://127.0.0.1:8000/cake/pedidos/"
   var cartContent=document.getElementsByClassName('carrito-contenido')[0]
   while(cartContent.hasChildNodes()){
     cartContent.removeChild(cartContent.firstChild)

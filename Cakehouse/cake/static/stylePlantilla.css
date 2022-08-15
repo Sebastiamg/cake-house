@@ -21,35 +21,47 @@ header{
     padding-left: 10%;
     padding-top: 1%;
     padding-bottom: 1%;
-    padding-right: 1%;
+    padding-right: 10%;
 }
 
 .contenedorHeader{
-    display: grid;
-    grid-template-columns: 15fr 1fr 1fr ;
-    align-items: center;
-    font-family: 'Fjalla One', sans-serif;
-    gap: 30px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .logo{
+    display: flex;
+    align-items: baseline;
     font-family: 'Pacifico', cursive !important;
     color: #583E3F;
 }
+.logo img{
+     width: 40px;
+     margin-right: 5px;
+}
 
+.herramientas{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+}
 
 .logIn a{
-    display: grid;
-    grid-template-columns: 1em 3em;
-    gap: 6px;
+    width: auto;
+    display: flex;
     justify-content: center;
+    justify-content: space-between;
 
-    background-color: aliceblue;
+    background-color:#fff;
     text-decoration: none;
     padding: 12px;
     border-radius: 45px;
-
     color: #583E3F;
+}
+
+.logIn p{
+    margin-left: 5px;
 }
 
 .logIn a:hover{
@@ -58,15 +70,20 @@ header{
     color:#fff;
 }
 
-.Carrito a{
-    display: grid;
-    grid-template-columns: 1em 3em;
-    gap: 1px;
-    justify-content: center;
 
+.cuenta h3{
+    text-decoration: none;
+    color: #583E3F;
+    font-size: 150%;
+}
+
+
+.Carrito a{
     text-decoration: none;
     color: #fff;
     font-size: 150%;
+    margin-left: 20px;
+    margin-right: 20px;
 
 }
 
@@ -109,7 +126,7 @@ header{
     background-color: rgb(255, 248, 236);
     box-shadow: -2px 0 4px hsl(0 4% 15%/ 10%);
     transition: 0.3s;
-    z-index: 2;
+    z-index: 200;
 }
 .carritoCompra.active{
     right: 0;
@@ -236,3 +253,35 @@ footer{
     color: #fff;
 }
 
+/**Navegador general**/
+
+.navegador_principal{
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1.5em;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    justify-items: center;
+    margin-top: 3%;
+}
+
+.navegador_principal a{
+    color: #583E3F;
+}
+.botonInformacion {
+    text-decoration: none;
+}
+.botonInicio:hover  {
+    text-decoration: underline;
+}
+.botonTienda:hover{
+    text-decoration: underline;
+}
+.botonInicio:hover{
+    text-decoration: underline;
+}
+.botonInformacion{
+    text-decoration: underline;
+}
+.botonPedidos:hover{
+    text-decoration: underline;
+}

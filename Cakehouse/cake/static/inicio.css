@@ -136,56 +136,6 @@ color: white;
 }
 
 
-.contenedorHeader{
-display: grid;
-grid-template-columns: 15fr 1fr 1fr ;
-align-items: center;
-font-family: 'Fjalla One', sans-serif;
-gap: 30px;
-}
-
-.logo{
-font-family: 'Pacifico', cursive !important;
-color: #583E3F;
-}
-
-
-.logIn a{
-display: grid;
-grid-template-columns: 1em 3em;
-gap: 6px;
-justify-content: center;
-
-background-color: aliceblue;
-text-decoration: none;
-padding: 12px;
-border-radius: 45px;
-
-color: #583E3F;
-}
-
-.logIn a:hover{
-
-background-color:#583E3F;
-color:#fff;
-}
-
-.Carrito a{
-display: grid;
-grid-template-columns: 1em 3em;
-gap: 1px;
-justify-content: center;
-
-text-decoration: none;
-color: #fff;
-font-size: 150%;
-
-}
-
-.Carrito a:hover{
-
-color: #583E3F;
-}
 
 /***********************/
 .caja-detalle{

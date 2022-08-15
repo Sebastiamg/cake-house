@@ -1,0 +1,119 @@
+.contenedorPedido{
+   display: flex;
+   justify-content: center;
+   margin-top: 3rem;
+   
+}
+
+.pedido{
+   width: 40%;
+   
+   
+   margin-left: 50px;
+   padding: 10px;
+}
+
+.detallePedido{
+   background-color: #fff;
+}
+.detallePedido p{
+   margin-top: 1.5rem;
+}
+
+.formaPago{
+   margin-top: 1.5rem;
+   border: solid 2px #583E3F;
+   padding: 50px;
+}
+
+.formaPago form {
+   margin-top: 1rem;
+}
+
+.formaPago p{
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+   line-height: 1.9;
+}
+.formaPago button{
+   margin-top: 1rem;
+   text-decoration: none;
+   color: #F59FBC;
+   background-color: #583E3F;
+   font-size: 1.5rem;
+   border: none;
+   border-radius: 20px;
+   cursor: pointer;
+   padding: 20px;
+   margin-left: 35%;
+
+}
+
+
+.crearFactura p{
+   margin-top: 1rem;
+}
+.crearFactura .direccion{
+   width: 100%;
+}
+
+.crearFactura input{
+   text-align: center;
+   margin-top: 1rem;
+   font-size: 1rem;
+   padding: 1rem;
+   /* width: 90%; */
+   border-radius: 45px;
+   border: 1px solid #F59FBC;
+}
+
+.crearFactura button{
+   margin-top: 1rem;
+   font-size: 1rem;
+   padding: 1rem;
+   width: 100px;
+   color: #583E3F;
+   background-color: #F59FBC;
+   border: none;
+   border-radius: 45px;
+   cursor: pointer;
+   width: 70%;
+   
+}
+.facturaCreada{
+   margin-top: 5rem;
+}
+
+
+/**Navegador general**/
+
+.navegador_principal{
+   font-family: 'Fjalla One', sans-serif;
+   font-size: 1.5em;
+   display: grid;
+   grid-template-columns: repeat(4,1fr);
+   justify-items: center;
+   margin-top: 3%;
+}
+
+.navegador_principal a{
+   color: #583E3F;
+}
+.botonInformacion {
+   text-decoration: none;
+}
+.botonInicio:hover  {
+   text-decoration: underline;
+}
+.botonTienda:hover{
+   text-decoration: underline;
+}
+.botonInicio:hover{
+   text-decoration: underline;
+}
+.botonInformacion:hover {
+   text-decoration: underline;
+}
+.botonPedidos {
+   text-decoration: underline;
+}

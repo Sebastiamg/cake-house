@@ -53,7 +53,10 @@
         </div>
         {% comment %} CARTA - DESCRIPCION {% endcomment %}
          <div class="products-preview">
+
+
             {% for pastel in lista_pasteles %}
+            
                <div class="preview" data-target="{{pastel.id}}">
                   <i class="fas fa-times"></i>
                   <img src="{{pastel.imagen}}" alt="" class="producto-imagen">
@@ -63,7 +66,10 @@
                   <div class="price">{{pastel.precio}}$</div>
                   <i class="fa-solid fa-cart-arrow-down add-cartt"></i>
                </div>
+
             {% endfor %}
+
+
          </div>
     </div>   
 </main>

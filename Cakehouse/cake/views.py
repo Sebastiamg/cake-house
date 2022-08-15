@@ -1,6 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
-from .models import Producto
+from .models import Producto, Direccion
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login, logout
+from django.contrib.auth.decorators import login_required, permission_required
+from django.contrib.auth.models import User
 
 
 def index(request):
@@ -13,6 +17,21 @@ def inicio(request):
 def info(request):
     return render(request, "cake/info.html")
 
+def pedido(request):
+    
+    if request.user.is_authenticated:
+        lista_productos = Producto.objects.all()
+        user1 = User.objects.get(pk = request.user.id)
+        # user1 = get_object_or_404(User, pk = request.user.id)
+        facturas = user1.direccion_set.all()
+        # facturas = Direccion.objects.all()
+        return render(request, "cake/pedidos.html", {"lista": lista_productos, "facturas": facturas})
+    else:
+        return render(request, "cake/pedidos.html")
+    # return render(request, "cake/pedidos.html", {"lista": lista_productos, "facturas": facturas})
+
+@login_required()
+@permission_required("cake.can_add")
 def gestion(request):
     lista_productos = Producto.objects.all()
     return render(request, "cake/administrador.html", {"Productos": lista_productos})
@@ -38,8 +57,46 @@ def actualizar(request, producto_id):
     # return HttpResponse("hola")
     # return render(request, "cake/administrador.html", {"pList": producto_lista })
 
-def login(request):
-    return render(request, "cake/login.html")
+# def login(request):
+#     return render(request, "cake/login.html")
 
 def registro(request):
-    return render(request, "cake/registro.html")
+    if request.method == "POST":
+        datos = UserCreationForm(request.POST)
+        if datos.is_valid():
+            user = datos.save()
+            login(request, user)
+            return redirect("/cake/")
+        else:
+            return HttpResponse("Usuario o Contraseña incorrectas")
+    form = UserCreationForm()
+    return render(request, "cake/registro.html", {"form": form})
+
+def cerrarSesion(request):
+    logout(request)
+    return redirect("/cake/inicio/")
+
+
+
+
+
+def direccion(request):
+    user = User.objects.get(pk = request.user.id)
+    user.direccion_set.create(nombre=request.POST["nombre"], telefono=request.POST["telefono"], correo=request.POST["correo"], direccion=request.POST["direccion"], entrega=request.POST["entrega"])
+    user.save()
+    # Direccion().save()
+    return redirect("/cake/pedidos/")
+
+
+
+
+
+
+
+
+
+
+def eliminarFactura(request, factura_id):
+    factura = get_object_or_404(Direccion ,pk = factura_id)
+    factura.delete()
+    return redirect("/cake/pedidos/")

@@ -6,52 +6,81 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block titulo %}{% endblock titulo %}</title>
-    <link rel="stylesheet" href= "{% static 'stylePlantilla.css/' %}">
-    <link rel="stylesheet" href= {% block css %}{% endblock css %}"">
+    <link rel="stylesheet" href= "{% static 'stylePlantilla.css' %}">
     <script src="https://kit.fontawesome.com/ce60eb93cd.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href= {% block css %}{% endblock css %}"">
+    <script src="" crossorigin="anonymous"></script>
 </head>
 <body>
+
     <header>
+      
         <div class="contenedorHeader">
             <div class="logo">
-                <h1 style="font-family: 'Pacifico', cursive">Cake House</h1>
+               <img src="" alt="">
+               <h1 style="font-family: 'Pacifico', cursive">Cake House</h1>
             </div>
-            <div class="logIn">
-                <a href="/cake/login/" class="linkLogIn">
-                    <i class="fa-solid fa-user"></i>
-                    <p>Log In</p>
-                </a>
-            </div>
-            <div class="Carrito">
-                <a href="#">
-                    <!-- <p>2</p> -->
-                    <i class="fa-solid fa-bag-shopping" id="carrito_icono"></i>   
-                </a>
-                <!-- carrito -->
-                <div class="carritoCompra">
-                  <h2 class="carrito-titulo">Tu carrito</h2>
-                  <div class="carrito-contenido">
-                     
+            <div class="herramientas">
+               <div class="cuenta">
+
+                {% if user.is_authenticated %}
+                    <h3 href="#" class="cuenta">Hola {{user.username}}</h3>
+                  {% else %}
+                {% endif %}
+                </div> 
+              
+              <div class="Carrito">
+                  <a href="#">
+                      <!-- <p>2</p> -->
+                      <i class="fa-solid fa-bag-shopping" id="carrito_icono"></i>
+                      
+                  </a>
+                  <!-- carrito -->
+                  <div class="carritoCompra">
+                    <h2 class="carrito-titulo">Tus compras</h2>
+                    <div class="carrito-contenido">
+                       
+                    </div>
+                    <!-- total -->
+                    <div class="total">
+                       <div class="titulo-total">total</div>
+                       <div class="precio-total">$0</div>
+                    </div>
+                    <!-- Boton de comprar -->
+                    <button type="button" class="btn-comprar">Realizar Compra</button>
+                    <!-- Cerrar Carrito -->
+                    <i class="fa-solid fa-circle-xmark" id="cerrar-carrito"></i>
                   </div>
-                  <!-- total -->
-                  <div class="total">
-                     <div class="titulo-total">total</div>
-                     <div class="precio-total">$0</div>
-                  </div>
-                  <!-- Boton de comprar -->
-                  <button type="button" class="btn-comprar">Guardar en pedido</button>
-                  <!-- Cerrar Carrito -->
-                  <i class="fa-solid fa-circle-xmark" id="cerrar-carrito"></i>
-                </div>              
+                  
+              </div>
+
+               <div class="logIn">
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'cerrarSesion' %}" class="linkLogIn">
+                        <i class="fa-solid fa-door-open"></i>
+                        <p>Cerrar Sesión</p>
+                     </a>
+                        {% else %}
+                        <a href="{% url 'login' %}" class="linkLogIn">
+                            <i class="fa-solid fa-door-open"></i>
+                            <p>Ingresa</p>
+                         </a>
+                    {% endif %}
+               </div>
+              
             </div>
+            
         </div>
     </header>
+
+
+
 {% comment %} navegador {% endcomment %}
     <nav class="navegador_principal">
         <a href="{% url 'inicio' %}" class="botonInicio">Inicio</a>
         <a href="{% url 'index' %}" class="botonTienda">Tienda</a>
         <a href="{% url 'info' %}" class="botonInformacion">Informacion</a>
-        <a href="" class="botonPedidos">Pedidos</a>
+        <a href="{% url 'pedido' %}" class="botonPedidos">Pedidos</a>
     </nav>
 
     {% block contenido %}
@@ -78,6 +107,8 @@
         </div>
     </footer>
 
+    
     <script src="{% block script %}{% endblock script %}"></script>
+    {% comment %} <script src="{% static 'inicio.js' %}"></script> {% endcomment %}
 </body>
 </html>

@@ -7,6 +7,7 @@
     <title>Administración Cake House</title>
 </head>
 <body>
+    {% if perms %}
     <h1>Añadir Producto</h1>
     {% comment %} FORMULARIO {% endcomment %}
     <form id="formulario1" action="{% url 'nuevo' %}" method="POST">
@@ -60,5 +61,8 @@
             form.action = `/cake/actualizado/${productoId}/`    
         }
     </script>
+    {% else %}
+    <h1>No tienes Permisos de Administrador</h1>
+    {% endif %}
 </body>
 </html>

@@ -6,29 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrate</title>
-    <link rel="stylesheet" href="{% static 'login.css/' %}">
+    <link rel="stylesheet" href="{% static 'login.css' %}">
     <script src="https://kit.fontawesome.com/8e5e9f9afd.js" crossorigin="anonymous"></script>
 
 </head>
 <body>
-    <form class="formulario">
+    <form class="formulario" method="POST" action="{% url 'registro' %}">
+        {% csrf_token %}
         <h1>Registrate</h1>
         <div class="contenedor">
-            <div class="imput-contenedor">
-                <i class="fa-solid fa-user icon"></i>
-                <input type="text" placeholder="Nombre">
-            </div><br>
-            <div class="imput-contenedor">
-                <i class="fa-solid fa-envelope icon"></i>
-                <input type="text" placeholder="Correo Electronico">
-            </div><br>
-            <div class="imput-contenedor">
-                <i class="fa-solid fa-lock icon"></i>
-                <input type="password" placeholder="Contraseña">
-            </div><br>
-            <input type="submit" value="Registrate" class="button">
-            <p>Al registrarte, aceptas nuestras condiciones de Uso y la Política de privacidad</p>
-            <p>¿Ya tienes cuenta?<a class="link" href="/cake/login/"> Iniciar Sesión</a></p>
+            <div class="input-contenedor"> 
+                <i class="fa-solid fa-user  icon"></i>
+                <input type="text" placeholder="Nombre de usuario" name="username">
+            </div>
+            <div class="input-contenedor"> 
+                <i class="fa-solid fa-key icon"></i>
+                <input type="password" placeholder="Contraseña" name="password1">
+            </div>
+            <div class="input-contenedor"> 
+                <i class="fa-solid fa-key icon"></i>
+                <input type="password" placeholder="Confirma tu contraseña" name="password2">
+            </div>
+           <input type="submit" value="Registrate" class="button">
+           <p>Al registrarte aceptas nuestras condiciones de uso y politica de privacidad</p>
+           <p>Ya tienes una cuenta? <a href="{% url 'login' %}" class="link">Ingresa</a></p>
         </div>
     </form>  
 </body>

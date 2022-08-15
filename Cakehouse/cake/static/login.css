@@ -1,67 +1,95 @@
-body{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 0;
-    background-image: url(https://i.pinimg.com/564x/3a/31/af/3a31af0cb0c3861315030ceec9eda854--cute-wallpaper-backgrounds-pastel-iphone-wallpaper.jpg);
-    background-size: cover;
-    background-attachment: fixed;
-    opacity: 0.7;
-}
-
 *{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-}
-.formulario{
-    width: 300px;
-    border: 1px solid black;
-    height: 70%;
-    margin-top: 150px;
-    margin-left: 550px;
-    border-radius: 10px;
-    background: #8cfca4;
-}
-input[type="text"],
-input[type="password"]{
-    padding: 5px;
-    background: #cfffca;
-    border-radius: 10px;
-}
-.button{
-    width: 100px;
-    padding: 6px;
-    border-radius: 5px;
-    margin-left: 85px;
-    cursor: pointer;
-    background: #c999af;
-
+    font-family: 'Fjalla One', sans-serif;
+    text-decoration: none;
+    transition: all .2s linear;
 }
 
+.pantalla{
+    display: flex;
+    justify-content: center;
+
+}
 .contenedor{
     width: 100%;
     padding: 15px;
-    border-radius: 5px;
+    
 }
+
+.formulario{
+    margin-top: 10vh;
+    margin-left: 30vw;
+    padding: 20px;
+    width: 40%;
+    text-align: center;
+    border: 5px solid #F59FBC;
+    box-shadow: -8px 8px 9px -7px rgba(0,0,0,0.9);
+-webkit-box-shadow: -8px 8px 9px -7px rgba(0,0,0,0.9);
+-moz-box-shadow: -8px 8px 9px -7px rgba(0,0,0,0.9);
+}
+
 h1{
     text-align: center;
-    color: black;
+    color: #583E3F;
     font-size: 40px;
 }
-.icon{
-    min-width: 50px;
-    text-align: center;
-    color: rgb(8, 8, 8);
+
+input[type="text"],input[type="password"]{
+    font-size: 20px;
+    width: 82%;
+    padding: 10px;
+    border:solid 2px #fad398;
+
 }
+
+.input-contenedor{
+    margin-bottom: 15px;
+
+}
+
+i{
+    min-height: 50px;
+    text-align: center;
+    color: #583E3F;
+}
+
+.button{
+    border: none;
+    width: 40%;
+    background-color: #583E3F;
+    color: #F59FBC;
+    font-size: 20px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor:pointer;
+}
+
 .button:hover{
-    background: cadetblue;
+    background: #F59FBC;
+    color: #583E3F;
 }
+
 p{
+    margin-top: 20px;
     text-align: center;
-    font-size: 12px;
 }
+
 .link{
-    text-decoration: none;
-    color: blue;
+    color: #583E3F;
     font-weight: 600;
 }
+
 .link:hover{
-    color: cadetblue;
+    color: #fad398;
+}
+
+@media (min-width:768) {
+    .formulario{
+        margin: auto;
+        width: 500px;
+        margin-top: 150px;
+        border-radius: 2%;
+    }
 }
