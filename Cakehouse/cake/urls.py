@@ -16,5 +16,6 @@ urlpatterns = [
     path("login/", LoginView.as_view(template_name="cake/login.html"), name="login"),
     path("logOut/", views.cerrarSesion, name="cerrarSesion"),
     path("direccion/", views.direccion, name="direccion"),
-    path("eliminarDirecion/<int:factura_id>", views.eliminarFactura, name="eliminarFactura")
+    path("eliminarDirecion/<int:factura_id>/", views.eliminarFactura, name="eliminarFactura"),
+    path("actualizarFactura/<int:factura_id>/", views.actualizarFactura, name="actualizarFactura")
 ]

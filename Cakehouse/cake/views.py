@@ -1,3 +1,4 @@
+from pickletools import read_uint1
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Producto, Direccion
@@ -76,10 +77,6 @@ def cerrarSesion(request):
     logout(request)
     return redirect("/cake/inicio/")
 
-
-
-
-
 def direccion(request):
     user = User.objects.get(pk = request.user.id)
     user.direccion_set.create(nombre=request.POST["nombre"], telefono=request.POST["telefono"], correo=request.POST["correo"], direccion=request.POST["direccion"], entrega=request.POST["entrega"])
@@ -87,16 +84,21 @@ def direccion(request):
     # Direccion().save()
     return redirect("/cake/pedidos/")
 
-
-
-
-
-
-
-
-
-
 def eliminarFactura(request, factura_id):
     factura = get_object_or_404(Direccion ,pk = factura_id)
     factura.delete()
     return redirect("/cake/pedidos/")
+
+def actualizarFactura(request, factura_id):
+    factura = Direccion.objects.get(pk = factura_id)
+    
+    # if request.method == "POST":
+ 
+    factura.nombre    = request.POST["nombre"] 
+    factura.telefono  = request.POST["telefono"]     
+    factura.correo    = request.POST["correo"] 
+    factura.direccion = request.POST["direccion"]     
+    factura.entrega   = request.POST["entrega"] 
+    factura.save()
+    return redirect("/cake/pedidos/")
+    # return render(request, "cake/pedidos.html/", {"factura": factura})

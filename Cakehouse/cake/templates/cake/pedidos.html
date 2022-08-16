@@ -10,45 +10,48 @@
 {% block contenido %}
 <div class="contenedorPedido">
     <div class="factura">
+
+{% comment %} form factura {% endcomment %}
         <div class="crearFactura">
             <h2>factura</h2>
+                <form action="{% url 'direccion' %}" method="POST" id="form">
+                  {% csrf_token %}
+                    <input type="text" placeholder="Nombre" name="nombre">
+                    <input type="number" placeholder="telefono" name="telefono">
+                    <input type="email" placeholder="correo electronico" name="correo"><br>
+                    <input type="text" placeholder="direccion" class="direccion" name="direccion">
+                    <p>Cuando deseas que se entregue tu pastel</p>
+                    <input type="date" name="entrega"><br>
+                    {% if user.is_authenticated %}
+                    <button id="agregar">Guardar</button> 
+                    {% else %}
+                    <h2 style="margin: 10px auto">Inicia Sesión para guardar los datos de tu factura</h2>
+                    {% endif %}                 
+                </form>
+           </div>
 
 
-        <form action="{% url 'direccion' %}" method="POST">
-          {% csrf_token %}
-            <input type="text" placeholder="Nombre" name="nombre">
-            <input type="number" placeholder="telefono" name="telefono">
-            <input type="email" placeholder="correo electronico" name="correo"><br>
-            <input type="text" placeholder="direccion" class="direccion" name="direccion">
-            <p>Cuando deseas que se entregue tu pastel</p>
-            <input type="date" name="entrega" id=""><br>
-            {% if user.is_authenticated %}
-            <button>Guardar</button> 
-            {% else %}
-            <h2 style="margin: 10px auto">Inicia Sesión para guardar los datos de tu factura</h2>
-            {% endif %}                 
-        </form>
 
-        </div>
-        {% comment %} <div class="facturaCreada">
-            <h2>Facturas creadas</h2>
-            <p>No hay datos de factura guardados</p>
-        </div> {% endcomment %}
+{% comment %} tarjetas factura {% endcomment %}
+<div id="tarjetas">
         {% if facturas %}
         <div class="facturaCreada">
           <h2>Facturas creadas</h2>
           {% for factura in facturas %}
-          <div style="border: 2px solid black; margin: 10px 0 20px 0">
-            <h3>Nombre: {{factura.nombre}}</h3>
-            <h3>Dirección: {{factura.direccion}}</h3>
-            <h3>Entrega: {{factura.entrega}}</h3>
-            <form action="{% url 'eliminarFactura' factura.id %}" method="POST">
-              {% csrf_token %}
-              <button>Eliminar Factura</button>
-            </form>
+          <div id="tarjeta" class="tarjeta{{forloop.counter}}" style="border: 2px solid black; margin: 10px 0 20px 0">
+              <h3>{{factura.nombre}}</h3>
+              <h3>{{factura.telefono}}</h3>
+              <h3>{{factura.correo}}</h3>
+              <h3>{{factura.direccion}}</h3>
+              <h3>{{factura.entrega}}</h3>
+              <form action="{% url 'eliminarFactura' factura.id %}" method="POST">
+                  {% csrf_token %}
+                <button>Eliminar Factura</button>
+              </form>
+                <button onclick="Actualizar({{forloop.counter}}, {{factura.id}})">Actualizar Factura</button>
           </div>
           {% endfor %}
-      </div> 
+        </div> 
 
         {% else %}
         <div class="facturaCreada" style="margin: 25px 0">
@@ -56,7 +59,7 @@
           <p>No hay datos de factura guardados</p>
         </div> 
         {% endif %}
-
+</div>
 
     </div>
     <div class="pedido">
@@ -196,11 +199,29 @@
     </div>
     
 
+    </div>
+  <div> 
 </div>
-<div>
+<script>
+  const tarjetas = document.querySelectorAll("#tarjeta")
+  const form = document.querySelector("#form")
+  const formInputs = [...document.querySelectorAll("#form input")]
+  const agregar = document.querySelector("#agregar")
+  
+  
+  const Actualizar = (id, productoId) => {    
+  
+      const tarjetaUnica = [...document.querySelectorAll(`.tarjeta${id} h3`)]
+  
+      for(let i = 0; i <= 4; i++) {
+          formInputs[i+1].value = tarjetaUnica[i].textContent
+      }
+  
+      agregar.textContent = "Actualizar"
+      form.action = `/cake/actualizarFactura/${productoId}/`
+  }
 
-    
-</div>
+</script>
 {% endblock contenido %}
 
 {% block script %}
