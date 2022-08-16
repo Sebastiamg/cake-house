@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 
 class Producto(models.Model):
-    imagen       =   models.CharField(max_length=200)
+    imagen       =   models.CharField(max_length=1000)
     titulo       =   models.CharField(max_length=100)
     precio       =   models.IntegerField()
     descripcion  =   models.CharField(max_length=200)
@@ -16,4 +16,4 @@ class Direccion(models.Model):
     telefono    = models.IntegerField()
     correo      = models.EmailField()
     direccion   = models.CharField(max_length=500)
-    entrega     = models.DateField()
+    entrega     = models.DateField()    

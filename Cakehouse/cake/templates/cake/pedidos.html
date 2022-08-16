@@ -4,7 +4,7 @@
 {% block titulo %}Pedidos{% endblock titulo %}
 
 {% block css %}
-    {% static 'pedidos.css' %}
+    {% static 'pedidos.css/' %}
 {% endblock css %}
 
 {% block contenido %}
@@ -38,18 +38,23 @@
         <div class="facturaCreada">
           <h2>Facturas creadas</h2>
           {% for factura in facturas %}
-          <div id="tarjeta" class="tarjeta{{forloop.counter}}" style="border: 2px solid black; margin: 10px 0 20px 0">
-              <h3>{{factura.nombre}}</h3>
-              <h3>{{factura.telefono}}</h3>
-              <h3>{{factura.correo}}</h3>
-              <h3>{{factura.direccion}}</h3>
-              <h3>{{factura.entrega}}</h3>
-              <form action="{% url 'eliminarFactura' factura.id %}" method="POST">
-                  {% csrf_token %}
-                <button>Eliminar Factura</button>
-              </form>
-                <button onclick="Actualizar({{forloop.counter}}, {{factura.id}})">Actualizar Factura</button>
-          </div>
+          <div id="tarjeta" class="tarjeta{{forloop.counter}}">
+            <h3>{{factura.nombre}}</h3>
+            <hr>
+            <h3>{{factura.telefono}}</h3>
+            <hr>
+            <h3>{{factura.correo}}</h3>
+            <hr>
+            <h3>{{factura.direccion}}</h3>
+            <hr>
+            <h3>{{factura.entrega}}</h3>
+            <hr>
+            <form action="{% url 'eliminarFactura' factura.id %}" method="POST">
+            {% csrf_token %} 
+              <button class="botonfactura">Eliminar Factura</button>
+            </form>
+              <button class="botonfactura" onclick="Actualizar({{forloop.counter}}, {{factura.id}})">Actualizar Factura</button>
+        </div>
           {% endfor %}
         </div> 
 
@@ -80,7 +85,7 @@
                 </div>
                   <p id="descriptionError" style="visibility: hidden; color:red; text-align: center;">Please enter a description</p>
                   {% comment %} total {% endcomment %}
-                <div style="text-align: center"><label for="amount"></label><input name="amountInput" type="number" id="amount" style="width: 20%; height: 55px; font-size: large; text-align: center;"><span style="font-size: large;">USD</span></div>
+                <div style="text-align: center; display:;"><label for="amount"></label><input name="amountInput" type="number" id="amount" value="50" style="width: 20%; height: 55px; font-size: large; text-align: center; border: none;"><span style="font-size: large;">USD</span></div>
                   <p id="priceLabelError" style="visibility: hidden; color:red; text-align: center;">Please enter a price</p>
                 <div id="invoiceidDiv" style="text-align: center; display: none;"><label for="invoiceid"> </label><input name="invoiceid" maxlength="127" type="text" id="invoiceid" value="" ></div>
                   <p id="invoiceidError" style="visibility: hidden; color:red; text-align: center;">Please enter an Invoice ID</p>

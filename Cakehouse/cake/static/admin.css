@@ -1,0 +1,86 @@
+#agregar {
+    display: flex;
+    margin: 20px auto;
+    justify-content: center;
+}
+
+#contenedor {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#formulario1 {
+    display: flex;
+    position: relative;
+    /* top: 50px; */
+    left: 0;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 100px 0 50px ;
+    border: 5px solid #F59FBC   ;
+    padding: 10px;
+    font-weight: bold;
+    box-shadow: -4px 4px 8px black;
+    width: 15%;
+}
+
+#formulario1 input {
+    margin: 5px 0 10px 0;
+    border: 3px solid #fad398;
+    width: 100%;
+}
+
+#formulario1 button {
+    width: 100%;
+    background: #583E3F;
+    color:#F59FBC;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border:none;
+    font-weight: bold;
+    transition: all .3s;
+}
+
+#formulario1 button:hover {
+    background: #F59FBC;
+    color:#583E3F;
+
+}
+
+.tarjetas1 {
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    flex-wrap: wrap;
+    width: 70%;
+}
+
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    width: 170px;
+    border: 3px solid #583E3F;
+    text-align: center;
+    margin: 15px 15px -5px 10px;
+    background: #fad398;
+}
+
+.tButton {
+    width: 100%;
+    text-align: center;
+    margin: 3px auto 0;
+    font-weight: bold;
+    /* border:none; */
+    border: 2px solid #3a2a2a;
+    background: #583E3F;
+    color:white;
+    padding: 3px;
+}
+
+/* 
+style="border: 2px solid black; display: inline-block; width: 170px; height: 100px; text-align:center; margin: 20px 10px" */

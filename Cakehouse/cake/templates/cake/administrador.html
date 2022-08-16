@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,10 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administración Cake House</title>
+    <link rel="stylesheet" href="{% static 'admin.css/' %}">
 </head>
 <body>
     {% if perms %}
-    <h1>Añadir Producto</h1>
+    <h1 id="agregar">Añadir Producto</h1>
+<div id="contenedor">
     {% comment %} FORMULARIO {% endcomment %}
     <form id="formulario1" action="{% url 'nuevo' %}" method="POST">
         {% csrf_token %}
@@ -24,13 +27,13 @@
         <label for="desc">Descripción:</label>
         <input type="text" id="desc" name="desc">
 
-        <button id="agregar">Añadir Producto</button>
+        <button id="agregar1">Añadir Producto</button>
     </form>
 
-    <div>
+    <div class="tarjetas1">
         {% comment %} ELIMINAR {% endcomment %}
         {% for producto in Productos %}
-            <div id="tarjeta{{forloop.counter}}" class="tarjeta" style="border: 2px solid black; display: inline-block; width: 170px; height: 100px; text-align:center; margin: 20px 10px" method="POST">
+            <div id="tarjeta{{forloop.counter}}" class="tarjeta" method="POST">
                 <h3 style="display: none">{{producto.imagen}}</h3>
                 <h3>{{producto.titulo}}</h3>
                 <h3 style="display: none">{{producto.precio}}</h3>
@@ -38,9 +41,9 @@
 
                 <form action="{% url 'eliminado' producto.id %}" method="GET">
                 {% csrf_token %}
-                    <button>Eliminar</button>
+                    <button class="tButton">Eliminar</button>
                 </form>
-                    <button type="submit" onclick="Actualizar({{forloop.counter}}, {{producto.id}})">Actualizar</button>
+                    <button class="tButton" type="submit" onclick="Actualizar({{forloop.counter}}, {{producto.id}})">Actualizar</button>
             </div>
         {% endfor %}
     </div>
@@ -50,7 +53,7 @@
         const tarjetas = document.querySelectorAll(".tarjeta")
         const form = document.querySelector("#formulario1")
         const formInputs = [...document.querySelectorAll("#formulario1 input")]
-        const agregar = document.querySelector("#agregar")
+        const agregar = document.querySelector("#agregar1")
 
         const Actualizar = (id, productoId) => {
             const tarjetaUnica = [...document.querySelectorAll(`#tarjeta${id} h3`)]
@@ -63,6 +66,7 @@
     </script>
     {% else %}
     <h1>No tienes Permisos de Administrador</h1>
+</div>
     {% endif %}
 </body>
 </html>

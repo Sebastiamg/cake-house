@@ -185,9 +185,6 @@ cartShopBox.getElementsByClassName('carrito-contador')[0]
 .addEventListener('change',quantityChanged)
 }
 
-
-
-
 //Actualizar  total
 function updateTotal(){
   var cartContent=document.getElementsByClassName('carrito-contenido')[0]
@@ -205,4 +202,3 @@ function updateTotal(){
     total=Math.round(total*100)/100
     document.getElementsByClassName('precio-total')[0].innerText ="$"+total
 }
-

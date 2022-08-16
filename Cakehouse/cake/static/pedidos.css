@@ -117,3 +117,44 @@
 .botonPedidos {
    text-decoration: underline;
 }
+
+/* ............ */
+#tarjeta{
+   background-color: #fad398;
+   border: 3px solid #583E3F;
+   margin: 10px 0 20px 0;
+   padding: 2rem;
+   border-radius: 45px;
+   
+}
+
+#tarjeta h3{
+   color: #583E3F;
+}
+
+hr{
+   border: 3px dashed rgba(165, 42, 42, 0.13);
+}
+
+.botonfactura {
+   /* position: relative; */
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   background-color:#583E3F;
+   color: #F59FBC;
+   margin: 1rem auto 0;
+   width: 10rem;
+   /* margin-left: 40%; */
+   padding: 13px;
+   border-radius: 45px;
+   font-weight: 500;
+   border: none;
+}
+
+.botonfactura:hover{
+   background-color: #F59FBC;
+   color: #583E3F;
+}
